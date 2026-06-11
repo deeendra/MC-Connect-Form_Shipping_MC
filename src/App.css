@@ -1,0 +1,13 @@
+/* KOSONGKAN SAJA BOS!
+  Semua styling global udah di-handle oleh index.css dan Tailwind di App.tsx.
+  Menyimpan max-width: 1280px atau padding di sini cuma akan merusak layout full-screen kita.
+*/
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  text-align: left;
+}
