@@ -35,7 +35,7 @@ const db = getFirestore(app);
 // Helper function: Radar pembaca multi-versi field nama di Firestore
 const getCustName = (c) => c?.nama_customer || c?.namaCustomer || c?.nama || c?.customerName || c?.nama_pemesan || 'Tanpa Nama';
 const getCustPhone = (c) => c?.nomor_hp || c?.nomorHp || c?.hp || c?.phone || c?.no_hp || '-';
-const getSpkTitle = (s) => s?.judul || s?.judulPesanan || s?.namaPesanan || s?.nama_pesanan || s?.tipePesanan || 'Tanpa Judul';
+const getSpkTitle = (s) => s?.judul_design || s?.judulPesanan || s?.namaPesanan || s?.nama_pesanan || s?.tipePesanan || 'Tanpa Judul';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -219,7 +219,7 @@ export default function App() {
             customerName: getCustName(selectedCustomer),
             customerHp: getCustPhone(selectedCustomer),
             spkIds: selectedSpks.map(s => s.id),
-            spkDetails: selectedSpks.map(s => ({ id: s.id, judul: getSpkTitle(s) })),
+            spkDetails: selectedSpks.map(s => ({ id: s.id, judul_design: getSpkTitle(s) })),
             beratKiriman: parseFloat(berat),
             jumlahKoli: parseInt(koli),
             createdByAdminAt: serverTimestamp(),
